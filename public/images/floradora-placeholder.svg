@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="625" viewBox="0 0 1000 625">
+  <title>Floradora image placeholder</title>
+  <rect width="1000" height="625" fill="#dce5cd"/>
+  <rect x="38" y="38" width="924" height="549" rx="5" fill="none" stroke="#294936" stroke-opacity=".25" stroke-dasharray="8 10"/>
+  <g fill="#294936" text-anchor="middle">
+    <text x="500" y="245" font-family="Arial, sans-serif" font-size="20" letter-spacing="5">PROJECT PREVIEW</text>
+    <text x="500" y="330" font-family="Georgia, serif" font-size="64">Floradora</text>
+    <text x="500" y="393" font-family="Arial, sans-serif" font-size="23">Screenshot placeholder</text>
+    <text x="500" y="548" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">16:10</text>
+  </g>
+</svg>

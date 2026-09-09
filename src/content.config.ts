@@ -9,7 +9,7 @@ const profile = defineCollection({
   loader: glob({ pattern: 'profile.yaml', base: './src/content' }),
   schema: z.object({
     name: text, initials: text, headline: text, introduction: text,
-    email: z.string().email(), github: webLink, linkedin: webLink, resume: asset,
+    email: z.string().email(), github: webLink, linkedin: webLink, blog: webLink.optional(), resume: asset,
     about: text,
     education: z.object({ school: text, degree: text, dates: text, graduation: text, gpa: text }),
     certifications: z.array(z.object({ name: text, issuer: text, date: text })),
@@ -21,7 +21,7 @@ const profile = defineCollection({
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
   schema: z.object({
-    title: text, category: text, summary: text, dates: text,
+    title: text, category: text, summary: text, dates: text.optional(),
     technologies: z.array(text).min(1),
     featured: z.boolean().default(true), order: z.number().int().default(100),
     image: z.object({ src: asset, alt: text }).optional(),

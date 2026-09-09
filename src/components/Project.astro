@@ -11,7 +11,7 @@ const data = project.data;
     <p class="eyebrow">{data.category}</p>
     <h3 id={`project-${project.id}`}>{data.title}</h3>
     <p class="project-summary">{data.summary}</p>
-    <p class="metadata">{data.dates}</p>
+    {data.dates && <p class="metadata">{data.dates}</p>}
     <ul class="tags" aria-label={`${data.title} technologies`}>
       {data.technologies.map((technology) => <li>{technology}</li>)}
     </ul>

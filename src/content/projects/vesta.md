@@ -6,6 +6,9 @@ dates: August 2025 – May 2026
 technologies: [Flutter, Dart, Supabase, PostgreSQL, GitHub]
 featured: true
 order: 2
+image:
+  src: /images/vesta-placeholder.svg
+  alt: VESTA project image placeholder. Replace with an application screenshot.
 ---
 
 ### My contributions

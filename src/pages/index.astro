@@ -29,7 +29,7 @@ const title = `${profile.name} | Developer`;
     <header class="site-header wrap">
       <a class="wordmark" href="#" aria-label={`${profile.name}, home`}><span class="monogram">{profile.initials}</span><span>{profile.name}</span></a>
       <nav aria-label="Main navigation">
-        <a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+        <a href="#projects">Projects</a><a href="#about">About</a>{profile.blog && <a href={profile.blog}>Blog <span aria-hidden="true">↗</span></a>}<a href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
     <main id="main">

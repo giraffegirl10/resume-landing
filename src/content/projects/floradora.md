@@ -6,6 +6,9 @@ dates: June 2026 – Present
 technologies: [React, TypeScript, Python, FastAPI, PostgreSQL, Docker]
 featured: true
 order: 1
+image:
+  src: /images/floradora-placeholder.svg
+  alt: Floradora project image placeholder. Replace with an application screenshot.
 ---
 
 ### What I built

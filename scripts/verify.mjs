@@ -11,6 +11,10 @@ for (const value of [profile.name, profile.headline, profile.introduction, profi
   assert(html.includes(escape(value)), `Missing profile content: ${value}`);
 }
 const projects = [];
+if (profile.blog) {
+  const navigation = html.match(/<nav\b[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert(navigation.includes(`href="${escape(profile.blog)}"`), 'Blog link is missing from the header');
+}
 for (const file of await readdir(resolve(root, 'src/content/projects'), { recursive: true })) {
   if (!file.endsWith('.md')) continue;
   const source = await readFile(resolve(root, 'src/content/projects', file), 'utf8');
@@ -24,6 +28,9 @@ for (const project of projects) {
   assert(html.includes(escape(project.summary)), `Missing summary: ${project.title}`);
   for (const technology of project.technologies) assert(html.includes(escape(technology)), `Missing technology: ${technology}`);
   if (project.image) assert(html.includes(escape(project.image.alt)), `Missing image alt: ${project.title}`);
+  for (const url of [project.repository, project.demo].filter(Boolean)) {
+    assert(html.includes(`href="${escape(url)}"`), `Missing project link: ${url}`);
+  }
 }
 assert.equal((html.match(/<h1\b/g) ?? []).length, 1, 'Expected one main heading');
 assert.equal((html.match(/<article class="project"/g) ?? []).length, projects.length, 'Featured project count differs');

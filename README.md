@@ -15,7 +15,7 @@ Open the local URL printed by Astro. Saved content and style changes appear in t
 
 ## Update the profile
 
-Edit `src/content/profile.yaml` to change the name, headline, introduction, contact links, education, certifications, experience, and skills. Keep the field names and YAML indentation. Quote values containing a colon followed by a space.
+Edit `src/content/profile.yaml` to change the name, headline, introduction, contact links, education, certifications, experience, and skills. The optional `blog` URL controls the header's Blog link. Keep the field names and YAML indentation. Quote values containing a colon followed by a space.
 
 Replace `public/Heather_Schoonmaker_Resume.pdf` to update the download. The PDF is separate from the website content. Updating either one does not update the other.
 
@@ -36,7 +36,7 @@ image:
   alt: Describe what the real screenshot shows.
 ```
 
-Screenshots keep their natural aspect ratio. Use a compressed image with readable interface text. The initial site contains no invented app screenshots or unverified project links.
+Screenshots keep their natural aspect ratio. Use a compressed image with readable interface text. Each current project uses a labeled 16:10 SVG placeholder. To replace one, add the real screenshot to `public/images/` and change that project's `image.src` and `image.alt` fields. Regenerate the placeholders with `node scripts/generate-placeholders.mjs`. These images are layout samples, not app screenshots.
 
 ## Change the design
 
