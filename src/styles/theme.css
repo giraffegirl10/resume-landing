@@ -1,0 +1,16 @@
+/* Change these tokens to customize the whole site. */
+:root {
+  --paper: #f7f6ef;
+  --surface: #eeeee4;
+  --ink: #202c26;
+  --muted: #5f695f;
+  --accent: #204c3d;
+  --accent-light: #d5e2b7;
+  --line: #ced2c5;
+  --font-body: 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --content-width: 1160px;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  --section-space: clamp(4rem, 8vw, 7rem);
+  --radius: 0.4rem;
+}

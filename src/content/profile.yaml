@@ -1,0 +1,37 @@
+# Edit these values to update the page. Keep the field names and indentation.
+name: Heather Schoonmaker
+initials: HS
+headline: Building for the way people live.
+introduction: Computer science student building full-stack web and mobile applications, from gamified productivity tools to interactive scam-awareness simulations.
+email: Heather.Schoonmaker1@gmail.com
+github: https://github.com/giraffegirl10
+linkedin: https://www.linkedin.com/in/hschoonmaker/
+resume: /Heather_Schoonmaker_Resume.pdf
+about: My work spans React and FastAPI web applications, Flutter mobile development, and PostgreSQL databases. I bring experience working with a research sponsor, collaborating on a development team, and supporting customers in a fast-paced environment.
+education:
+  school: University of North Texas
+  degree: Bachelor’s in Computer Science
+  dates: August 2022 – December 2026
+  graduation: Expected December 2026
+  gpa: '3.5'
+certifications:
+  - name: Certified in Cybersecurity (CC)
+    issuer: ISC2
+    date: December 2025
+experience:
+  - role: Associate
+    company: In-N-Out Burger
+    location: Fort Worth, TX
+    dates: July 2022 – Present
+    description: Working with a team to deliver consistent service in a high-volume environment.
+    contributions:
+      - Train and onboard new team members on operating procedures.
+      - Prioritize competing tasks and resolve customer and operational issues.
+      - Maintain quality standards while collaborating through peak service hours.
+skills:
+  - category: Languages
+    items: [Python, TypeScript, JavaScript, SQL, C++, Dart, HTML/CSS]
+  - category: Frameworks & data
+    items: [React, FastAPI, Flutter, PostgreSQL, Supabase]
+  - category: Tools & practices
+    items: [Docker, GitHub Actions, Linux, PyTest, RESTful APIs, JWT Authentication, OWASP Secure Coding]

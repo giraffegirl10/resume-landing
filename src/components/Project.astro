@@ -1,0 +1,27 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+interface Props { project: CollectionEntry<'projects'>; index: number }
+const { project, index } = Astro.props;
+const { Content } = await render(project);
+const data = project.data;
+---
+<article class="project" aria-labelledby={`project-${project.id}`}>
+  <div class="project-heading">
+    <span class="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+    <p class="eyebrow">{data.category}</p>
+    <h3 id={`project-${project.id}`}>{data.title}</h3>
+    <p class="project-summary">{data.summary}</p>
+    <p class="metadata">{data.dates}</p>
+    <ul class="tags" aria-label={`${data.title} technologies`}>
+      {data.technologies.map((technology) => <li>{technology}</li>)}
+    </ul>
+    {(data.repository || data.demo) && <div class="project-links">
+      {data.repository && <a href={data.repository}>View source <span aria-hidden="true">↗</span></a>}
+      {data.demo && <a href={data.demo}>Live demo <span aria-hidden="true">↗</span></a>}
+    </div>}
+  </div>
+  <div class="project-detail">
+    {data.image && <img src={data.image.src} alt={data.image.alt} loading="lazy" width="1000" height="625" />}
+    <div class="prose"><Content /></div>
+  </div>
+</article>
