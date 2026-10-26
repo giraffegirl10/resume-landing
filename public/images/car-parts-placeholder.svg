@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="625" viewBox="0 0 1000 625">
+  <title>Car Parts Ordering Site image placeholder</title>
+  <rect width="1000" height="625" fill="#e7f7ee"/>
+  <rect x="38" y="38" width="924" height="549" rx="14" fill="none" stroke="#55556e" stroke-opacity=".25" stroke-dasharray="8 10"/>
+  <g fill="#55556e" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">
+    <text x="500" y="250" font-size="20" letter-spacing="4">[ PROJECT PREVIEW ]</text>
+    <text x="500" y="330" font-size="52" font-weight="bold">Car Parts Ordering Site</text>
+    <text x="500" y="390" font-size="22">// screenshot placeholder</text>
+    <text x="500" y="548" font-size="18" letter-spacing="2">16:10</text>
+  </g>
+</svg>

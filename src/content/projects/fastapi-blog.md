@@ -4,7 +4,7 @@ category: Full-stack web application
 summary: A deployed blogging application with user accounts, author pages, and an API for publishing and managing posts.
 technologies: [Python, FastAPI, SQLAlchemy, Jinja2, Alembic, PyTest]
 featured: true
-order: 3
+order: 2
 repository: https://github.com/giraffegirl10/fastapi_blog
 demo: https://blog.hschoonmaker.com/
 image:

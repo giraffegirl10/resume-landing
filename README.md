@@ -15,7 +15,7 @@ Open the local URL printed by Astro. Saved content and style changes appear in t
 
 ## Update the profile
 
-Edit `src/content/profile.yaml` to change the name, headline, introduction, contact links, education, certifications, experience, and skills. The optional `blog` URL controls the header's Blog link. Keep the field names and YAML indentation. Quote values containing a colon followed by a space.
+Edit `src/content/profile.yaml` to change the name, introduction, contact links, education, certifications, experience, and skills. The optional `blog` URL controls the header's Blog link. Keep the field names and YAML indentation. Quote values containing a colon followed by a space.
 
 Replace `public/Heather_Schoonmaker_Resume.pdf` to update the download. The PDF is separate from the website content. Updating either one does not update the other.
 
@@ -40,7 +40,7 @@ Screenshots keep their natural aspect ratio. Use a compressed image with readabl
 
 ## Change the design
 
-Edit `src/styles/theme.css` to change colors, fonts, page width, spacing, and corner radius. Fonts use system families by default, so no external font request is needed.
+Edit `src/styles/theme.css` to change colors, fonts, page width, spacing, and corner radius. Project tiles cycle through `--tint-1` to `--tint-4` in display order. Bricolage Grotesque and JetBrains Mono load from Google Fonts in `src/pages/index.astro`; system fonts are the fallback.
 
 Edit `src/styles/global.css` for section styling and responsive rules. Edit `src/pages/index.astro` to change section layout or interface labels. The project layout lives in `src/components/Project.astro`.
 
@@ -64,4 +64,13 @@ For layout changes, inspect the page at desktop and mobile widths and navigate t
 npm run build
 ```
 
-Deploy the `dist/` folder to a static host. No server adapter is needed. Set `site` in `astro.config.mjs` to the final origin when changing hosts or domains. The Sites project configuration is in `.openai/hosting.json`.
+Deploy the `dist/` folder to your static host. No server adapter or ChatGPT Sites connection is needed.
+
+Set the `SITE_URL` environment variable to your deployed origin before building to include a canonical URL. For example, in PowerShell:
+
+```powershell
+$env:SITE_URL = 'https://your-domain.com'
+npm run build
+```
+
+Without `SITE_URL`, the site still builds and omits the canonical link. Deployment is manual; no automatic publishing is configured.

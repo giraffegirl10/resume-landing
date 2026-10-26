@@ -8,7 +8,7 @@ const asset = z.string().regex(/^\/(?!\/)[^?#]+$/, 'Use a path starting with one
 const profile = defineCollection({
   loader: glob({ pattern: 'profile.yaml', base: './src/content' }),
   schema: z.object({
-    name: text, initials: text, headline: text, introduction: text,
+    name: text, initials: text, introduction: text,
     email: z.string().email(), github: webLink, linkedin: webLink, blog: webLink.optional(), resume: asset,
     about: text,
     education: z.object({ school: text, degree: text, dates: text, graduation: text, gpa: text }),

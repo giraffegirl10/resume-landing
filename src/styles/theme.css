@@ -1,16 +1,30 @@
 /* Change these tokens to customize the whole site. */
 :root {
-  --paper: #f7f6ef;
-  --surface: #eeeee4;
-  --ink: #202c26;
-  --muted: #5f695f;
-  --accent: #204c3d;
-  --accent-light: #d5e2b7;
-  --line: #ced2c5;
-  --font-body: 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-display: Georgia, 'Times New Roman', serif;
-  --content-width: 1160px;
-  --page-gutter: clamp(1.25rem, 5vw, 5rem);
-  --section-space: clamp(4rem, 8vw, 7rem);
-  --radius: 0.4rem;
+  --page: #eceef3;
+  --tile: #ffffff;
+  --ink: #1a1a2e;
+  --muted: #55556e;
+  --night: #1a1a2e;
+  --night-text: #c9cadb;
+  --night-muted: #b9bad0;
+  --accent: #ff9fb8;
+  --line: #e2e4ec;
+  /* Project tiles cycle through these colors in display order. */
+  --tint-1: #ffd9e2;
+  --tint-2: #fff0a8;
+  --tint-3: #cdeedd;
+  --tint-4: #d4e6ff;
+  --lavender: #e3dcff;
+  /* Code colors for the profile.json and skills.py tiles. */
+  --code-key: #4b3fd6;
+  --code-string: #a3275f;
+  --code-key-dark: #9fd3ff;
+  --code-string-dark: #ffe066;
+  --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --content-width: 1240px;
+  --page-gutter: clamp(0.75rem, 2.5vw, 1.5rem);
+  --tile-pad: clamp(1.5rem, 3.5vw, 3rem);
+  --radius: 28px;
+  --radius-inner: 18px;
 }

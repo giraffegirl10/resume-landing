@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://heather-schoonmaker-portfolio.keelog7331.chatgpt.site',
+  // Set SITE_URL to your deployed origin to enable canonical metadata.
+  site: process.env.SITE_URL,
   output: 'static',
 });

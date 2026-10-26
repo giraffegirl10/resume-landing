@@ -5,7 +5,7 @@ summary: Interactive economic simulations to assess vulnerability to financial s
 dates: August 2025 – May 2026
 technologies: [Flutter, Dart, Supabase, PostgreSQL, GitHub]
 featured: true
-order: 2
+order: 4
 image:
   src: /images/vesta-placeholder.svg
   alt: VESTA project image placeholder. Replace with an application screenshot.

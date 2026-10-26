@@ -4,24 +4,25 @@ interface Props { project: CollectionEntry<'projects'>; index: number }
 const { project, index } = Astro.props;
 const { Content } = await render(project);
 const data = project.data;
+const folder = data.repository?.split('/').filter(Boolean).pop() ?? project.id;
+const tint = `--tint: var(--tint-${(index % 4) + 1})`;
 ---
-<article class="project" aria-labelledby={`project-${project.id}`}>
-  <div class="project-heading">
-    <span class="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-    <p class="eyebrow">{data.category}</p>
-    <h3 id={`project-${project.id}`}>{data.title}</h3>
-    <p class="project-summary">{data.summary}</p>
-    {data.dates && <p class="metadata">{data.dates}</p>}
-    <ul class="tags" aria-label={`${data.title} technologies`}>
-      {data.technologies.map((technology) => <li>{technology}</li>)}
-    </ul>
-    {(data.repository || data.demo) && <div class="project-links">
-      {data.repository && <a href={data.repository}>View source <span aria-hidden="true">↗</span></a>}
-      {data.demo && <a href={data.demo}>Live demo <span aria-hidden="true">↗</span></a>}
-    </div>}
-  </div>
-  <div class="project-detail">
-    {data.image && <img src={data.image.src} alt={data.image.alt} loading="lazy" width="1000" height="625" />}
-    <div class="prose"><Content /></div>
+<article class:list={['project', 'tile', { flip: index % 2 === 1 }]} style={tint} aria-labelledby={`project-${project.id}`}>
+  <div class="project-bar" aria-hidden="true"><span>~/{folder}</span><span>{String(index + 1).padStart(2, '0')}</span></div>
+  <div class="project-body">
+    <div class="project-text">
+      <p class="project-meta">{data.category}{data.dates && ` · ${data.dates}`}</p>
+      <h3 id={`project-${project.id}`}>{data.title}</h3>
+      <p class="project-summary">{data.summary}</p>
+      <ul class="tags" aria-label={`${data.title} technologies`}>
+        {data.technologies.map((technology) => <li>{technology}</li>)}
+      </ul>
+      <div class="prose"><Content /></div>
+      {(data.repository || data.demo) && <div class="project-links">
+        {data.demo && <a class="pill pill-dark" href={data.demo}>live demo <span aria-hidden="true">↗</span></a>}
+        {data.repository && <a class="pill pill-outline" href={data.repository}>source <span aria-hidden="true">↗</span></a>}
+      </div>}
+    </div>
+    {data.image && <div class="project-media"><img src={data.image.src} alt={data.image.alt} loading="lazy" width="1000" height="625" /></div>}
   </div>
 </article>

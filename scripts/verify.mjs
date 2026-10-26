@@ -7,7 +7,7 @@ const root = process.cwd();
 const html = await readFile(resolve(root, 'dist/index.html'), 'utf8');
 const profile = parse(await readFile(resolve(root, 'src/content/profile.yaml'), 'utf8'));
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
-for (const value of [profile.name, profile.headline, profile.introduction, profile.email, profile.education.school]) {
+for (const value of [profile.name, profile.introduction, profile.email, profile.education.school]) {
   assert(html.includes(escape(value)), `Missing profile content: ${value}`);
 }
 const projects = [];
@@ -33,7 +33,7 @@ for (const project of projects) {
   }
 }
 assert.equal((html.match(/<h1\b/g) ?? []).length, 1, 'Expected one main heading');
-assert.equal((html.match(/<article class="project"/g) ?? []).length, projects.length, 'Featured project count differs');
+assert.equal((html.match(/<article class="project[\s"]/g) ?? []).length, projects.length, 'Featured project count differs');
 for (const [, fragment] of html.matchAll(/href="#([^"\s]+)"/g)) {
   assert(html.includes(`id="${fragment}"`), `Broken section link: ${fragment}`);
 }
